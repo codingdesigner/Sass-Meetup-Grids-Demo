@@ -10,7 +10,7 @@ $grids: add-grid(3 2 at $two-col);
 $grids: add-grid(5 8 3 at $three-col);
 $gutters: 1/3;
 $gutters: add-gutter(2/3 at $three-col);
-$output: 'isolation';
+// $output: 'float';
 
 
 // RESPONSIVE GRID STYLES
@@ -25,10 +25,10 @@ $output: 'isolation';
   .head {}
   @include breakpoint($two-col) {
     .main {
-      @include grid-span(1, 1)
+      @include grid-span(1, 1);
     }
     .side-one {
-      @include grid-span(1, 2)
+      @include grid-span(1, 2);
     }
     .side-two {
       @include grid-span(1, 2);
@@ -40,10 +40,16 @@ $output: 'isolation';
   }
   @include breakpoint($three-col) {
     .main {
-      @include grid-span(1, 2)
+      @include grid-span(1, 2);
+      @if $output == float {
+        @include push(1, 1);
+      }
     }
     .side-one {
-      @include grid-span(1, 1)
+      @include grid-span(1, 1);
+      @if $output == float {
+        @include pull(2, 1);
+      }
     }
     .side-two {
       @include grid-span(1, 3);

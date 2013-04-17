@@ -1,0 +1,85 @@
+/* ****** SUSY GRID ****** */
+
+@import 'susy';
+$total-columns: 4;
+$column-width: 4em;
+$gutter-width: .5em;
+$grid-padding: 0;
+$container-style: fluid;
+
+$two-col-layout: 460px 2;
+$three-col-layout: 800px 4;
+
+// RESPONSIVE GRID STYLES
+.grid-susy {
+  .container {
+    @include container;
+  }
+  .grid-item {
+    // @include debug-outline(#C0FFEE);
+  }
+  .head{}
+  @include at-breakpoint($two-col-layout) {
+    .container {
+      @include susy-grid-background;
+    }
+    .main {
+      @include span-columns(1);
+    }
+    .side-one, .side-two {
+      @include span-columns(1 omega);
+    }
+    .footer {
+      clear: both;
+    }
+  }
+  @include at-breakpoint($three-col-layout) {
+    .container {
+      @include susy-grid-background;
+    }
+    .main {
+      @include span-columns(2);
+      @include push(1);
+    }
+    .side-one {
+      @include span-columns(1);
+      @include pull(3);
+    }
+    .side-two {
+      @include span-columns(1 omega);
+    }
+    .footer {
+      @include span-columns(3 omega);
+    }
+  }
+}
+
+
+// BASIC GRID STYLES
+// .grid-susy {
+//   .container {
+//     @include container;
+//     @include susy-grid-background;
+//   }
+//   .grid-item {
+//     @include debug-outline(#C0FFEE);
+//   }
+//   .head{}
+//   .main {
+//     @include span-columns(2);
+//     @include push(1);
+//   }
+//   .side-one {
+//     @include span-columns(1);
+//     @include pull(3);
+//   }
+//   .side-two {
+//     @include span-columns(1 omega);
+//   }
+//   .footer {
+//     @include span-columns(3 omega);
+//   }
+// }
+
+
+/* ****** SUSY GRID ****** */

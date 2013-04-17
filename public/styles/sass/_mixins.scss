@@ -1,0 +1,12 @@
+////////////////////////
+// Mixins Partials
+//
+// All of your mixins should go in this file.
+////////////////////////
+
+@mixin debug-outline($color: red, $background-color: false) {
+  outline: 1px solid $color;
+  @if $background-color != false {
+    background-color: $background-color;
+  }
+}

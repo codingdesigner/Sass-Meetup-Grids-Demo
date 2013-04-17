@@ -1,0 +1,93 @@
+/* ****** MANUAL GRID ****** */
+
+.grid-manual, .grid-manual * {
+  @include box-sizing(border-box);
+}
+
+// Breakpoint variables
+$two-col: 460px;
+$three-col: 800px;
+
+// // RESPONSIVE GRID STYLES
+.grid-manual {
+  .grid-item {
+    // @include debug-outline(#BADA55);
+    @include breakpoint($two-col){
+      float: left;
+    }
+  }
+  .head {}
+  @include breakpoint($two-col){
+    .main {
+      clear: both;
+      width: 50%;
+      padding-right: 2em;
+    }
+    .side-one, .side-two {
+      width: 50%;
+      clear: right;
+      float: right;
+      padding-left: 2em;
+    }
+    .footer {
+      clear: both;
+    }
+  }
+  @include breakpoint($three-col){
+    .main {
+      margin-left: 25%;
+      padding: 0 2em;
+    }
+    .side-one {
+      width: 25%;
+      float: left;
+      margin-left: -75%;
+      padding: 0 2em 0 0;
+    }
+    .side-two {
+      width: 25%;
+      float: right;
+      padding-left: 2em;
+    }
+    .footer {
+      width: 75%;
+      margin-left: 25%;
+      padding-left: 2em;
+    }
+  }
+}
+
+// BASIC GRID STYLES
+// .grid-manual {
+//   .grid-item {
+//     @include debug-outline(#BADA55);
+//     @include breakpoint($two-col){
+//       float: left;
+//     }
+//   }
+//   .head {}
+//   .main {
+//     clear: both;
+//     width: 50%;
+//     margin-left: 25%;
+//     padding: 0 2em;
+//   }
+//   .side-one {
+//     width: 25%;
+//     margin-left: -75%;
+//     padding-right: 2em;
+//   }
+//   .side-two {
+//     width: 25%;
+//     float: right;
+//     padding-left: 2em;
+//   }
+//   .footer {
+//     clear: both;
+//     width: 75%;
+//     margin-left: 25%;
+//     padding-left: 2em;
+//   }
+// }
+
+/* ****** MANUAL GRID ****** */

@@ -1,0 +1,7 @@
+<ul class="nav">
+	<li {% if mixture.url == "index" %}class="current"{% endif %}><a href="/">Home</a></li>
+  <!-- <li {% if mixture.url == "model" %}class="current"{% endif %}><a href="/model">Model</a></li> -->
+  <li {% if mixture.url == "manual" %}class="current"{% endif %}><a href="/manual">Manual Grid</a></li>
+  <li {% if mixture.url == "susy" %}class="current"{% endif %}><a href="/susy">Susy Grid</a></li>
+	<li {% if mixture.url == "singularity" %}class="current"{% endif %}><a href="/singularity">Singularity Grid</a></li>
+</ul>
